@@ -1,3 +1,3 @@
 # (S)CSS Masterclass Clone
 
-SCSS masterclass clone site - Flexbox & Grid
+SCSS masterclass clone - Flexbox & Grid
