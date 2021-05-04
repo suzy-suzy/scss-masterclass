@@ -66,14 +66,139 @@ header {
 main {
   padding-left: $fixedWidth;
   .movie {
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.1) 2%,
+        transparent,
+        transparent,
+        transparent,
+        transparent
+      )
+      $red;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     height: 100vh;
-    background-color: $red;
+    .movie__header,
+    img,
+    .movie__bottom {
+      width: 80%;
+    }
     .movie__header {
       display: flex;
       justify-content: space-between;
+      align-items: flex-end;
+      color: white;
+      font-size: 32px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      div {
+        font-size: 14px;
+        text-align: right;
+      }
+    }
+    img {
+      box-shadow: 0 80px 80px -80px black, 0 0 12px rgba(0, 0, 0, 0.2),
+        inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+    }
+    .movie__bottom {
+      color: white;
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 20px;
+      div {
+        font-size: 14px;
+        font-weight: 600;
+      }
+      span {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+        opacity: 0.6;
+        transition: opacity 0.3s ease-in-out;
+        i {
+          margin-bottom: 10px;
+        }
+        &:hover {
+          cursor: pointer;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  header {
+    width: 600px;
+  }
+  main {
+    padding-left: 600px;
+    .movie {
+      height: 75vh;
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  header {
+    width: 420px;
+    h1 {
+      font-size: 66px;
+    }
+    h3 {
+      font-size: 18px;
+    }
+    p {
+      font-size: 16px;
+    }
+  }
+  main {
+    padding-left: 420px;
+    .movie {
+      height: 65vh;
+      .movie__header,
+      img,
+      .movie__bottom {
+        width: 85%;
+      }
+      .movie__header {
+        h2 {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 840px) {
+  header {
+    position: static;
+    width: 100%;
+    padding: 80px 40px;
+    height: 88%;
+    h1 {
+      width: 80%;
+    }
+    h3,
+    p {
+      width: 100%;
+      font-size: 24px;
+    }
+    p {
+      font-size: 18px;
+    }
+  }
+  main {
+    padding-left: 0;
+    .movie {
+      height: 65vh;
+      .movie__header,
+      img,
+      .movie__bottom {
+        width: 85%;
+      }
     }
   }
 }
