@@ -194,3 +194,36 @@ main .movie .movie__bottom span:hover {
     width: 85%;
   }
 }
+@media screen and (max-width: 470px) {
+  body {
+    height: 100%;
+  }
+  header {
+    padding: 60px 30px;
+    height: 95%;
+  }
+  header h1 {
+    font-size: 54px;
+  }
+  header h3 {
+    font-size: 21px;
+  }
+  main {
+    padding-left: 0;
+  }
+  main .movie {
+    height: 50vh;
+  }
+  main .movie .movie__bottom,
+  main .movie .movie__header,
+  main .movie img {
+    width: 85%;
+  }
+  main .movie .movie__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  main .movie .movie__header h2 {
+    margin-bottom: 10px;
+  }
+}

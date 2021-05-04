@@ -202,3 +202,37 @@ main {
     }
   }
 }
+
+@media screen and (max-width: 470px) {
+  body {
+    height: 100%;
+  }
+  header {
+    padding: 60px 30px;
+    height: 95%;
+    h1 {
+      font-size: 54px;
+    }
+    h3 {
+      font-size: 21px;
+    }
+  }
+  main {
+    padding-left: 0;
+    .movie {
+      height: 50vh;
+      .movie__header,
+      img,
+      .movie__bottom {
+        width: 85%;
+      }
+      .movie__header {
+        flex-direction: column;
+        align-items: flex-start;
+        h2 {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
