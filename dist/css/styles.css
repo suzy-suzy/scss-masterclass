@@ -1,1 +1,196 @@
-*{box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;background-color:#f0f0f0;height:100vh}header{position:fixed;left:0;top:0;width:33%;padding:80px 70px;color:#e2453b;flex-direction:column;height:100%}header h1{font-size:85px;text-transform:uppercase;margin-bottom:30px;letter-spacing:2px}header h3,header p{font-size:24px;font-weight:400;width:80%;line-height:1.3;margin-bottom:30px}header p{font-size:18px;text-align:justify}header ul{font-size:16px;font-weight:500;display:flex;flex-wrap:wrap;line-height:1.8;color:rgba(0,0,0,.6)}header ul li{margin-right:20px;border-bottom:1px solid rgba(0,0,0,.6)}header ul li:hover{color:#000;border-color:#000;cursor:pointer}main{padding-left:33%}main .movie{display:flex;justify-content:center;align-items:center;height:100vh;background-color:#e2453b}header,main .movie .movie__header{display:flex;justify-content:space-between}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: #f0f0f0;
+  height: 100vh;
+}
+header,
+main .movie .movie__header {
+  display: flex;
+  justify-content: space-between;
+}
+header,
+main .movie {
+  flex-direction: column;
+}
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 33%;
+  padding: 80px 70px;
+  height: 100%;
+  color: #e2453b;
+}
+header h1 {
+  font-size: 85px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+}
+header h3,
+header p {
+  font-weight: 400;
+  line-height: 1.3;
+  margin-bottom: 30px;
+}
+header h3 {
+  width: 80%;
+  font-size: 24px;
+}
+header p {
+  font-size: 18px;
+  text-align: justify;
+}
+header ul {
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  flex-wrap: wrap;
+  line-height: 1.8;
+  color: rgba(0, 0, 0, 0.6);
+}
+header ul li {
+  margin-right: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+}
+header ul li:hover {
+  color: #000;
+  border-color: #000;
+  cursor: pointer;
+}
+main {
+  padding-left: 33%;
+}
+main .movie {
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.1) 2%,
+      transparent,
+      transparent,
+      transparent,
+      transparent
+    )
+    #e2453b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+header p,
+main .movie .movie__bottom,
+main .movie .movie__header,
+main .movie img {
+  width: 80%;
+}
+main .movie .movie__header {
+  align-items: flex-end;
+  color: #fff;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+main .movie .movie__header div {
+  font-size: 14px;
+  text-align: right;
+}
+main .movie img {
+  box-shadow: 0 80px 80px -80px #000, 0 0 12px rgba(0, 0, 0, 0.2),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+}
+main .movie .movie__bottom {
+  color: #fff;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+main .movie .movie__bottom div {
+  font-size: 14px;
+  font-weight: 600;
+}
+main .movie .movie__bottom span {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  opacity: 0.6;
+  transition: opacity 0.3s ease-in-out;
+}
+main .movie .movie__bottom span i {
+  margin-bottom: 10px;
+}
+main .movie .movie__bottom span:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+@media screen and (max-width: 1600px) {
+  header {
+    width: 600px;
+  }
+  main {
+    padding-left: 600px;
+  }
+  main .movie {
+    height: 75vh;
+  }
+}
+@media screen and (max-width: 1280px) {
+  header {
+    width: 420px;
+  }
+  header h1 {
+    font-size: 66px;
+  }
+  header h3 {
+    font-size: 18px;
+  }
+  header p {
+    font-size: 16px;
+  }
+  main {
+    padding-left: 420px;
+  }
+  main .movie {
+    height: 65vh;
+  }
+  main .movie .movie__bottom,
+  main .movie .movie__header,
+  main .movie img {
+    width: 85%;
+  }
+  main .movie .movie__header h2 {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 840px) {
+  header {
+    position: static;
+    width: 100%;
+    padding: 80px 40px;
+    height: 88%;
+  }
+  header h1 {
+    width: 80%;
+  }
+  header h3,
+  header p {
+    width: 100%;
+    font-size: 24px;
+  }
+  header p {
+    font-size: 18px;
+  }
+  main {
+    padding-left: 0;
+  }
+  main .movie {
+    height: 65vh;
+  }
+  main .movie .movie__bottom,
+  main .movie .movie__header,
+  main .movie img {
+    width: 85%;
+  }
+}
