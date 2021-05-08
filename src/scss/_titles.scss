@@ -1,0 +1,22 @@
+%miniTitle {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+%sectionTitle {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  line-height: 1.2;
+  h5 {
+    @extend %miniTitle;
+    margin-bottom: 30px;
+  }
+  h2 {
+    font-size: 36px;
+  }
+}

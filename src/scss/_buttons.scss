@@ -1,0 +1,48 @@
+%button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 24px 40px;
+  border: 1px solid $gray;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out;
+}
+
+%buttonHover {
+  background-color: $black;
+  color: white;
+  border-color: $black;
+}
+
+%buttonProduct {
+  @extend %miniTitle;
+  @extend %button;
+  &:hover {
+    @extend %buttonHover;
+  }
+}
+
+%buttonArrow {
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+  }
+  &::before {
+    border-bottom: 1px solid $black;
+    border-right: 1px solid $black;
+    top: 29px;
+    right: 20px;
+    width: 8px;
+    height: 8px;
+    transform: rotate(-45deg) translateY(-50%);
+  }
+  &::after {
+    background-color: $black;
+    top: 30px;
+    right: 23px;
+    width: 12px;
+    height: 1px;
+  }
+}
