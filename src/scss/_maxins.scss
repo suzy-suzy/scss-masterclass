@@ -1,0 +1,25 @@
+@mixin bgImgUrl($url) {
+  background-image: url($url);
+  background-size: cover;
+  background-position: center;
+}
+
+@mixin bannerGridRows($rows) {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: $rows;
+}
+
+@mixin bannerBgc($color) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color;
+}
+
+@mixin bannerTextMargin($top, $right, $bottom, $left) {
+  font-size: 36px;
+  line-height: 1.2;
+  max-width: 450px;
+  margin: $top $right $bottom $left;
+}
