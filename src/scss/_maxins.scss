@@ -17,9 +17,50 @@
   background-color: $color;
 }
 
-@mixin bannerTextMargin($top, $right, $bottom, $left) {
+@mixin bannerTextMargin($margin: 0 0 50px 0) {
   font-size: 36px;
   line-height: 1.2;
   max-width: 450px;
-  margin: $top $right $bottom $left;
+  margin: $margin;
+}
+
+@mixin buttonPadding($padding: 0 40px) {
+  @extend %miniTitle;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 55px;
+  max-width: 100%;
+  padding: $padding;
+  border: 1px solid $gray;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out;
+  &:hover {
+    @extend %buttonHover;
+  }
+}
+
+@mixin buttonArrow($beforeTop: 25px, $afterTop: 26px) {
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+  }
+  &::before {
+    border-bottom: 1px solid $black;
+    border-right: 1px solid $black;
+    top: $beforeTop;
+    right: 20px;
+    width: 8px;
+    height: 8px;
+    transform: rotate(-45deg) translateY(-50%);
+  }
+  &::after {
+    background-color: $black;
+    top: $afterTop;
+    right: 23px;
+    width: 12px;
+    height: 1px;
+  }
 }
