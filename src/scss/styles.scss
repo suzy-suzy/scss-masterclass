@@ -4,7 +4,7 @@
 @import "_titles";
 @import "_buttons";
 @import "_banners";
-@import "_maxins.scss";
+@import "_maxins";
 
 * {
   box-sizing: border-box;
@@ -107,14 +107,10 @@ body {
     .banner__wrap {
       @extend %bannerTextWrap;
       p {
-        @include bannerTextMargin(0, 0, 50px, 0);
+        @include bannerTextMargin();
       }
       a {
-        @extend %miniTitle;
-        @extend %button;
-        &:hover {
-          @extend %buttonHover;
-        }
+        @include buttonPadding();
       }
     }
   }
@@ -142,23 +138,20 @@ body {
         @extend %miniTitle;
       }
       p {
-        @include bannerTextMargin(50px, 0, 50px, 0);
+        @include bannerTextMargin(50px 0 50px 0);
       }
       a {
         position: relative;
-        padding-right: 100px;
-        @extend %miniTitle;
-        @extend %button;
+        @include buttonPadding(0 85px 0 30px);
         span {
           position: absolute;
           width: 60px;
           height: 100%;
           right: 0;
           border-left: 1px solid $black;
-          @extend %buttonArrow;
+          @include buttonArrow();
         }
         &:hover {
-          @extend %buttonHover;
           span {
             &::before {
               border-color: white;
@@ -180,19 +173,17 @@ body {
     @extend %sectionTitle;
   }
   .product__columns {
-    // display: flex;
-    // justify-content: space-between;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
     .product__column {
-      width: 100%;
-      padding: 10px;
+      max-width: 100%;
+      padding: 0 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
       img {
-        width: 80%;
+        max-width: 100%;
         cursor: pointer;
       }
       .product__data {
@@ -231,7 +222,7 @@ body {
         }
       }
       .product__btn {
-        @extend %buttonProduct;
+        @include buttonPadding();
       }
     }
   }
@@ -242,7 +233,7 @@ body {
     background-color: #dee8e9;
     .banner__wrap {
       a {
-        padding-right: none;
+        @include buttonPadding();
       }
     }
   }
@@ -279,7 +270,7 @@ body {
       img {
         width: 50%;
         cursor: pointer;
-        margin-bottom: 20px;
+        margin-bottom: 24px;
       }
       div {
         @extend %miniTitle;
@@ -288,7 +279,7 @@ body {
     }
   }
   .product__btn {
-    @extend %buttonProduct;
+    @include buttonPadding();
   }
 }
 
@@ -318,12 +309,11 @@ body {
           font-size: 16px;
         }
         p {
-          @include bannerTextMargin(30px, 0, 40px, 0);
+          @include bannerTextMargin(30px 0 40px 0);
         }
         a {
           @extend %miniTitle;
           position: relative;
-          height: 64px;
           display: flex;
           align-items: center;
           padding-right: 30px;
@@ -331,7 +321,7 @@ body {
             position: absolute;
             right: -30px;
             top: 2px;
-            @extend %buttonArrow;
+            @include buttonArrow(2px, 3px);
             &::after {
               width: 24px;
             }
@@ -389,7 +379,7 @@ body {
         height: 40px;
         background-color: white;
         cursor: pointer;
-        @extend %buttonArrow;
+        @include buttonArrow();
         &::before {
           right: 10px;
           top: 18px;
@@ -453,7 +443,7 @@ body {
       ul {
         @extend %miniTitle;
         li {
-          padding: 6px 0;
+          padding: 10px 0;
         }
       }
     }
@@ -464,6 +454,7 @@ body {
   body > *:not(.banner, .footer) {
     padding: 0 40px;
   }
+
   .product--how {
     .product__columns {
       .product__column {
@@ -482,7 +473,7 @@ body {
 }
 
 @media screen and (max-width: 1020px) {
-  body > *:not(.product, .product--how, .articles) {
+  body > *:not(.product, .product--how) {
     padding: 0;
   }
   .banner,
@@ -534,6 +525,15 @@ body {
   .banner {
     margin-top: 110px;
   }
+  .product {
+    .product__columns {
+      .product__column {
+        .product__btn {
+          padding: 0 30px;
+        }
+      }
+    }
+  }
   .product--how {
     .product__columns {
       .product__column {
@@ -547,7 +547,6 @@ body {
       grid-template-rows: 1fr auto;
       .article__text {
         .article__wrap {
-          padding: 30px;
           p {
             font-size: 26px;
             margin: 20px 0 25px;
@@ -585,15 +584,11 @@ body {
 }
 
 @media screen and (max-width: 700px) {
-  body > *:not(.product, .product--how) {
-    padding: 0;
-  }
-
   .product {
-    padding: 0 20px;
     .product__columns {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
     }
   }
 
