@@ -91,7 +91,7 @@ body {
 }
 
 .banner {
-  margin: 160px 0 $sectionGap;
+  margin: 160px 0 $sectionMarginBottom;
   display: flex;
   div {
     width: 50%;
@@ -120,7 +120,7 @@ body {
 .banner-padding--second {
   padding: 0 $sideSpace;
   display: flex;
-  margin-bottom: $sectionGap;
+  margin-bottom: $sectionMarginBottom;
   div {
     width: 50%;
   }
@@ -168,7 +168,7 @@ body {
 
 .product {
   padding: 0 $sideSpace;
-  margin-bottom: $sectionGap;
+  margin-bottom: $sectionMarginBottom;
   .product__title {
     @extend %sectionTitle;
   }
@@ -246,7 +246,7 @@ body {
 
 .product--how {
   padding: 0 $sideSpace;
-  margin-bottom: $sectionGap;
+  margin-bottom: $sectionMarginBottom;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -285,7 +285,7 @@ body {
 
 .articles {
   padding: 0 $sideSpace;
-  margin-bottom: $sectionGap;
+  margin-bottom: $sectionMarginBottom;
   .article {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -347,7 +347,7 @@ body {
   padding: 0 $sideSpace;
   display: flex;
   justify-content: center;
-  margin-bottom: $sectionGap;
+  margin-bottom: $sectionMarginBottom;
   .email__wrap {
     width: 40%;
     .email__title {
@@ -395,7 +395,7 @@ body {
 
 .instagram {
   padding: 0 $sideSpace;
-  margin-bottom: $sectionGap;
+  margin-bottom: $sectionMarginBottom;
   .instagram__img {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
