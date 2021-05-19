@@ -1,15 +1,3 @@
-@mixin bgImgUrl($url) {
-  background-image: url($url);
-  background-size: cover;
-  background-position: center;
-}
-
-@mixin bannerGridRows($rows) {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: $rows;
-}
-
 @mixin bannerBgc($color) {
   display: flex;
   justify-content: center;
