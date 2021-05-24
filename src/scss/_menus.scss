@@ -1,0 +1,25 @@
+%menuList {
+  position: absolute;
+  top: 14%;
+  width: $menuWidth;
+  height: 72%;
+  ul {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    li {
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      border-bottom: 1px solid $bgc;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        background-color: $bgc;
+        color: #fff;
+      }
+    }
+  }
+}

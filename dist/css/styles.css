@@ -14,6 +14,75 @@
     transform: translateX(-1000px);
   }
 }
+@-webkit-keyframes menuAnimation {
+  0% {
+    transform: translateX();
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes menuAnimation {
+  0% {
+    transform: translateX();
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+main nav {
+  position: absolute;
+  top: 14%;
+  width: 32%;
+  height: 72%;
+}
+main nav ul {
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+  -ms-grid-rows: (1fr) [5];
+  grid-template-rows: repeat(5, 1fr);
+}
+main .column > :nth-child(1),
+main nav ul > :nth-child(1),
+main > :nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+}
+main nav ul > :nth-child(2) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+}
+main .column > :nth-child(2),
+main nav ul > :nth-child(3) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+}
+main nav ul > :nth-child(4) {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+}
+main .column > :nth-child(3),
+main nav ul > :nth-child(5) {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+}
+main nav ul li {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  border-bottom: 1px solid #af7832;
+  transition: all 0.3s ease-in-out;
+}
+main,
+main nav ul li:hover {
+  background-color: #af7832;
+  color: #fff;
+}
 * {
   box-sizing: border-box;
 }
@@ -36,16 +105,9 @@ main {
   -ms-grid-rows: 1fr;
   grid-template-rows: 1fr;
   gap: 1px;
-  background-color: #af7832;
   text-transform: uppercase;
   font-size: 28px;
   color: #af7832;
-}
-main .column > :nth-child(1),
-main .menu-list ul > :nth-child(1),
-main > :nth-child(1) {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
 }
 main > :nth-child(2) {
   -ms-grid-row: 1;
@@ -65,14 +127,6 @@ main .column {
   gap: 1px;
   background-color: #af7832;
   height: 100vh;
-}
-main .column > :nth-child(2) {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
-}
-main .column > :nth-child(3) {
-  -ms-grid-row: 5;
-  -ms-grid-column: 1;
 }
 main .column:nth-child(3) div:first-child {
   cursor: pointer;
@@ -94,54 +148,65 @@ main .column .img {
   background-image: url(https://images.unsplash.com/photo-1621684793835-1dfa38971adb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80);
   background-position: center;
   background-repeat: no-repeat;
+  cursor: pointer;
 }
 main .column .animation div {
   -webkit-animation: bottomAnimation 20s linear infinite;
   animation: bottomAnimation 20s linear infinite;
 }
-main .menu-list {
-  position: absolute;
-  top: 14%;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  height: 72%;
+main .menu-left {
+  left: 0;
 }
-main .menu-list ul {
-  width: 32%;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr;
-  grid-template-columns: 1fr;
-  -ms-grid-rows: (1fr) [5];
-  grid-template-rows: repeat(5, 1fr);
+main .menu-left li {
+  transform: translateX(-1000px);
+  -webkit-animation: menuAnimation 1.5s ease-in-out forwards;
+  animation: menuAnimation 1.5s ease-in-out forwards;
 }
-main .menu-list ul > :nth-child(2) {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
+main .menu-left li:first-child {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
 }
-main .menu-list ul > :nth-child(3) {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
+main .menu-left li:nth-child(2) {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
 }
-main .menu-list ul > :nth-child(4) {
-  -ms-grid-row: 4;
-  -ms-grid-column: 1;
+main .menu-left li:nth-child(3) {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
 }
-main .menu-list ul > :nth-child(5) {
-  -ms-grid-row: 5;
-  -ms-grid-column: 1;
+main .menu-left li:nth-child(4) {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
 }
-main .menu-list ul li {
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  border-bottom: 1px solid #af7832;
-  transition: all 0.3s ease-in-out;
+main .menu-left li:last-child {
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
 }
-main .menu-list ul li:hover {
-  background-color: #af7832;
-  color: #fff;
+main .menu-right {
+  right: 0;
+}
+main .menu-right li {
+  transform: translateX(1000px);
+  -webkit-animation: menuAnimation 1.5s ease-in-out forwards;
+  animation: menuAnimation 1.5s ease-in-out forwards;
+}
+main .menu-right li:first-child {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+main .menu-right li:nth-child(2) {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+main .menu-right li:nth-child(3) {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+main .menu-right li:nth-child(4) {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+main .menu-right li:last-child {
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
 }
